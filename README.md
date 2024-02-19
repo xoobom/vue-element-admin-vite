@@ -23,3 +23,31 @@ vue2+webpack项目庞大时启动慢，热更新慢，影响开发者的开发�
 "vue-template-compiler": "2.7.16"
 ```
 
+### vite相关依赖
+
+```
+"@vitejs/plugin-vue2": "2.3.1",
+"@vitejs/plugin-vue2-jsx": "1.1.1",
+"vite": "5.0.12",
+"vite-plugin-commonjs": "0.10.1",
+"vite-plugin-node-polyfills": "0.19.0",
+"vite-plugin-require": "1.1.14",
+"vite-plugin-svg-icons": "2.0.1",
+"path-browserify": "^1.0.1",
+```
+
+### index.html
+
+public\index.html迁移到\index.html
+
+
+
+### Can't find stylesheet to import
+
+@import "~@/styles改成 @import "@/styles
+
+
+
+## 参考资料
+
+http://www.taodudu.cc/news/show-4628179.html?action=onClick
