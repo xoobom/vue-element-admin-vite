@@ -44,7 +44,7 @@ export default defineConfig(({ mode, command }) => {
       preprocessorOptions: {
         less: {
           javascriptEnabled: true,
-          additionalData: `@import "${path.resolve(__dirname, 'src/styles/variables.module.scss')}";@import "${path.resolve(__dirname, 'src/styles/element-variables.scss')}";`,
+          additionalData: `@import "${path.resolve(__dirname, 'src/styles/variables.module.scss')}";`,
         },
       },
     },

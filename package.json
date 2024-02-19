@@ -56,11 +56,11 @@
     "sass": "1.32.13",
     "sass-loader": "10.1.1",
     "serve-static": "1.13.2",
-    "vite": "5.0.12",
-    "vite-plugin-commonjs": "0.10.1",
-    "vite-plugin-node-polyfills": "0.19.0",
-    "vite-plugin-require": "1.1.14",
-    "vite-plugin-svg-icons": "2.0.1",
+    "vite": "^5.0.12",
+    "vite-plugin-commonjs": "^0.10.1",
+    "vite-plugin-node-polyfills": "^0.19.0",
+    "vite-plugin-require": "^1.1.14",
+    "vite-plugin-svg-icons": "^2.0.1",
     "vue-template-compiler": "2.7.16"
   },
   "browserslist": [

@@ -1,25 +1,31 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import getters from './getters'
+import Vue from 'vue';
+import Vuex from 'vuex';
+import getters from './getters';
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
-// https://webpack.js.org/guides/dependency-management/#requirecontext
-const modulesFiles = require.context('./modules', true, /\.js$/)
+// const modulesFiles = require.context('./modules', true, /\.js$/)
+// const modules = modulesFiles.keys().reduce((modules, modulePath) => {
+//   const moduleName = modulePath.replace(/^\.\/(.*)\.\w+$/, '$1')
+//   const value = modulesFiles(modulePath)
+//   modules[moduleName] = value.default
+//   return modules
+// }, {})
 
-// you do not need `import app from './modules/app'`
-// it will auto require all vuex module from modules file
-const modules = modulesFiles.keys().reduce((modules, modulePath) => {
-  // set './app.js' => 'app'
-  const moduleName = modulePath.replace(/^\.\/(.*)\.\w+$/, '$1')
-  const value = modulesFiles(modulePath)
-  modules[moduleName] = value.default
-  return modules
-}, {})
+const moduleFiles = import.meta.glob('./modules/*.js');
+const modules = Object.fromEntries(
+  await Promise.all(
+    Object.entries(moduleFiles).map(async ([modulePath, moduleLoader]) => {
+      const moduleName = modulePath.replace(/^\.\/(.*)\.js$/, '$1');
+      const { default: moduleExports } = await moduleLoader();
+      return [moduleName, moduleExports];
+    }),
+  ),
+);
 
 const store = new Vuex.Store({
   modules,
-  getters
-})
+  getters,
+});
 
-export default store
+export default store;

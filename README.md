@@ -46,17 +46,40 @@ public\index.html迁移到\index.html，添加以下
 
 
 
-## 报错解决
+### Can't find stylesheet to import
 
-Can't find stylesheet to import
-
-解决：@import "~@/styles改成 @import "@/styles
+@import "~@/styles改成 @import "@/styles
 
 
 
-This experimental syntax requires enabling one of the following parser plugin(s): "jsx", "flow", "typescript"
+### This experimental syntax requires enabling one of the following parser plugin(s): "jsx", "flow", "typescript"
 
-解决：script标签添加lang="jsx"
+script标签添加lang="jsx"
+
+
+
+### require is not defined
+
+require.context改成
+
+```
+const moduleFiles = import.meta.glob('./modules/*.js');
+const modules = Object.fromEntries(
+  await Promise.all(
+    Object.entries(moduleFiles).map(async ([modulePath, moduleLoader]) => {
+      const moduleName = modulePath.replace(/^\.\/(.*)\.js$/, '$1');
+      const { default: moduleExports } = await moduleLoader();
+      return [moduleName, moduleExports];
+    }),
+  ),
+);
+```
+
+
+
+### The requested module '/src/styles/element-variables.scss' does not provide an export named 'default'
+
+element-variables.scss改成element-variables.module.scss
 
 
 
