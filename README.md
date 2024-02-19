@@ -38,13 +38,27 @@ vue2+webpack项目庞大时启动慢，热更新慢，影响开发者的开发�
 
 ### index.html
 
-public\index.html迁移到\index.html
+public\index.html迁移到\index.html，添加以下
+
+```
+<script type="module" src="/src/main.js"></script>
+```
 
 
 
-### Can't find stylesheet to import
+## 报错解决
 
-@import "~@/styles改成 @import "@/styles
+Can't find stylesheet to import
+
+解决：@import "~@/styles改成 @import "@/styles
+
+
+
+This experimental syntax requires enabling one of the following parser plugin(s): "jsx", "flow", "typescript"
+
+解决：script标签添加lang="jsx"
+
+
 
 
 
