@@ -142,18 +142,18 @@ const asyncRoutes = [
         name: 'TinymceDemo',
         meta: { title: 'Tinymce' }
       },
-      {
-        path: 'markdown',
-        component: 'views/components-demo/markdown',
-        name: 'MarkdownDemo',
-        meta: { title: 'Markdown' }
-      },
-      {
-        path: 'json-editor',
-        component: 'views/components-demo/json-editor',
-        name: 'JsonEditorDemo',
-        meta: { title: 'Json Editor' }
-      },
+      // {
+      //   path: 'markdown',
+      //   component: 'views/components-demo/markdown',
+      //   name: 'MarkdownDemo',
+      //   meta: { title: 'Markdown' }
+      // },
+      // {
+      //   path: 'json-editor',
+      //   component: 'views/components-demo/json-editor',
+      //   name: 'JsonEditorDemo',
+      //   meta: { title: 'Json Editor' }
+      // },
       {
         path: 'split-pane',
         component: 'views/components-demo/split-pane',
@@ -208,18 +208,18 @@ const asyncRoutes = [
         name: 'DragSelectDemo',
         meta: { title: 'Drag Select' }
       },
-      {
-        path: 'dnd-list',
-        component: 'views/components-demo/dnd-list',
-        name: 'DndListDemo',
-        meta: { title: 'Dnd List' }
-      },
-      {
-        path: 'drag-kanban',
-        component: 'views/components-demo/drag-kanban',
-        name: 'DragKanbanDemo',
-        meta: { title: 'Drag Kanban' }
-      }
+      // {
+      //   path: 'dnd-list',
+      //   component: 'views/components-demo/dnd-list',
+      //   name: 'DndListDemo',
+      //   meta: { title: 'Dnd List' }
+      // },
+      // {
+      //   path: 'drag-kanban',
+      //   component: 'views/components-demo/drag-kanban',
+      //   name: 'DragKanbanDemo',
+      //   meta: { title: 'Drag Kanban' }
+      // }
     ]
   },
   {
