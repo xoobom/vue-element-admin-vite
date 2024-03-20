@@ -7,7 +7,6 @@ import { getToken } from '@/utils/auth'; // get token from cookie
 import getPageTitle from '@/utils/get-page-title';
 
 // NProgress.configure({ showSpinner: false }); // NProgress Configuration
-console.log(1);
 const whiteList = ['/login', '/auth-redirect']; // no redirect whitelist
 
 router.beforeEach(async (to, from, next) => {
@@ -19,7 +18,6 @@ router.beforeEach(async (to, from, next) => {
 
   // determine whether the user has logged in
   const hasToken = getToken();
-  console.log(hasToken);
   if (hasToken) {
     if (to.path === '/login') {
       // if is logged in, redirect to the home page

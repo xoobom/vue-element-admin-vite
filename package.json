@@ -6,8 +6,7 @@
   "author": "Pan <panfree23@gmail.com>",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint --ext .js,.vue src"
+    "build": "vite build"
   },
   "dependencies": {
     "axios": "0.18.1",
@@ -16,16 +15,13 @@
     "driver.js": "0.9.5",
     "dropzone": "5.5.1",
     "echarts": "4.2.1",
-    "element-ui": "2.13.2",
+    "element-ui": "2.15.14",
     "file-saver": "2.0.1",
     "fuse.js": "3.4.4",
     "js-cookie": "2.2.0",
     "jsonlint": "1.6.3",
     "jszip": "3.2.1",
-    "normalize.css": "7.0.0",
-    "nprogress": "0.2.0",
     "path-browserify": "^1.0.1",
-    "path-to-regexp": "2.4.0",
     "screenfull": "4.2.0",
     "script-loader": "0.7.2",
     "sortablejs": "1.8.4",
