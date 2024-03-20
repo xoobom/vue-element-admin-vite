@@ -1,16 +1,16 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import Vue from 'vue';
+import Router from 'vue-router';
 
-Vue.use(Router)
+Vue.use(Router);
 
 /* Layout */
-import Layout from '@/layout'
+import Layout from '@/layout';
 
 /* Router Modules */
-import componentsRouter from './modules/components'
-import chartsRouter from './modules/charts'
-import tableRouter from './modules/table'
-import nestedRouter from './modules/nested'
+import componentsRouter from './modules/components';
+import chartsRouter from './modules/charts';
+import tableRouter from './modules/table';
+import nestedRouter from './modules/nested';
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -46,29 +46,29 @@ export const constantRoutes = [
     children: [
       {
         path: '/redirect/:path(.*)',
-        component: () => import('@/views/redirect/index')
-      }
-    ]
+        component: () => import('@/views/redirect/index.vue'),
+      },
+    ],
   },
   {
     path: '/login',
-    component: () => import('@/views/login/index'),
-    hidden: true
+    component: () => import('@/views/login/index.vue'),
+    hidden: true,
   },
   {
     path: '/auth-redirect',
-    component: () => import('@/views/login/auth-redirect'),
-    hidden: true
+    component: () => import('@/views/login/auth-redirect.vue'),
+    hidden: true,
   },
   {
     path: '/404',
-    component: () => import('@/views/error-page/404'),
-    hidden: true
+    component: () => import('@/views/error-page/404.vue'),
+    hidden: true,
   },
   {
     path: '/401',
-    component: () => import('@/views/error-page/401'),
-    hidden: true
+    component: () => import('@/views/error-page/401.vue'),
+    hidden: true,
   },
   {
     path: '/',
@@ -77,11 +77,11 @@ export const constantRoutes = [
     children: [
       {
         path: 'dashboard',
-        component: () => import('@/views/dashboard/index'),
+        component: () => import('@/views/dashboard/index.vue'),
         name: 'Dashboard',
-        meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
-      }
-    ]
+        meta: { title: 'Dashboard', icon: 'dashboard', affix: true },
+      },
+    ],
   },
   {
     path: '/documentation',
@@ -89,11 +89,11 @@ export const constantRoutes = [
     children: [
       {
         path: 'index',
-        component: () => import('@/views/documentation/index'),
+        component: () => import('@/views/documentation/index.vue'),
         name: 'Documentation',
-        meta: { title: 'Documentation', icon: 'documentation', affix: true }
-      }
-    ]
+        meta: { title: 'Documentation', icon: 'documentation', affix: true },
+      },
+    ],
   },
   {
     path: '/guide',
@@ -102,11 +102,11 @@ export const constantRoutes = [
     children: [
       {
         path: 'index',
-        component: () => import('@/views/guide/index'),
+        component: () => import('@/views/guide/index.vue'),
         name: 'Guide',
-        meta: { title: 'Guide', icon: 'guide', noCache: true }
-      }
-    ]
+        meta: { title: 'Guide', icon: 'guide', noCache: true },
+      },
+    ],
   },
   {
     path: '/profile',
@@ -116,13 +116,13 @@ export const constantRoutes = [
     children: [
       {
         path: 'index',
-        component: () => import('@/views/profile/index'),
+        component: () => import('@/views/profile/index.vue'),
         name: 'Profile',
-        meta: { title: 'Profile', icon: 'user', noCache: true }
-      }
-    ]
-  }
-]
+        meta: { title: 'Profile', icon: 'user', noCache: true },
+      },
+    ],
+  },
+];
 
 /**
  * asyncRoutes
@@ -138,7 +138,7 @@ export const asyncRoutes = [
     meta: {
       title: 'Permission',
       icon: 'lock',
-      roles: ['admin', 'editor'] // you can set roles in root nav
+      roles: ['admin', 'editor'], // you can set roles in root nav
     },
     children: [
       {
@@ -147,17 +147,17 @@ export const asyncRoutes = [
         name: 'PagePermission',
         meta: {
           title: 'Page Permission',
-          roles: ['admin'] // or you can only set roles in sub nav
-        }
+          roles: ['admin'], // or you can only set roles in sub nav
+        },
       },
       {
         path: 'directive',
         component: () => import('@/views/permission/directive'),
         name: 'DirectivePermission',
         meta: {
-          title: 'Directive Permission'
+          title: 'Directive Permission',
           // if do not set roles, means: this page does not require permission
-        }
+        },
       },
       {
         path: 'role',
@@ -165,10 +165,10 @@ export const asyncRoutes = [
         name: 'RolePermission',
         meta: {
           title: 'Role Permission',
-          roles: ['admin']
-        }
-      }
-    ]
+          roles: ['admin'],
+        },
+      },
+    ],
   },
 
   {
@@ -179,9 +179,9 @@ export const asyncRoutes = [
         path: 'index',
         component: () => import('@/views/icons/index'),
         name: 'Icons',
-        meta: { title: 'Icons', icon: 'icon', noCache: true }
-      }
-    ]
+        meta: { title: 'Icons', icon: 'icon', noCache: true },
+      },
+    ],
   },
 
   /** when your routing map is too long, you can split it into small modules **/
@@ -197,29 +197,29 @@ export const asyncRoutes = [
     name: 'Example',
     meta: {
       title: 'Example',
-      icon: 'el-icon-s-help'
+      icon: 'el-icon-s-help',
     },
     children: [
       {
         path: 'create',
         component: () => import('@/views/example/create'),
         name: 'CreateArticle',
-        meta: { title: 'Create Article', icon: 'edit' }
+        meta: { title: 'Create Article', icon: 'edit' },
       },
       {
         path: 'edit/:id(\\d+)',
         component: () => import('@/views/example/edit'),
         name: 'EditArticle',
         meta: { title: 'Edit Article', noCache: true, activeMenu: '/example/list' },
-        hidden: true
+        hidden: true,
       },
       {
         path: 'list',
         component: () => import('@/views/example/list'),
         name: 'ArticleList',
-        meta: { title: 'Article List', icon: 'list' }
-      }
-    ]
+        meta: { title: 'Article List', icon: 'list' },
+      },
+    ],
   },
 
   {
@@ -230,9 +230,9 @@ export const asyncRoutes = [
         path: 'index',
         component: () => import('@/views/tab/index'),
         name: 'Tab',
-        meta: { title: 'Tab', icon: 'tab' }
-      }
-    ]
+        meta: { title: 'Tab', icon: 'tab' },
+      },
+    ],
   },
 
   {
@@ -242,22 +242,22 @@ export const asyncRoutes = [
     name: 'ErrorPages',
     meta: {
       title: 'Error Pages',
-      icon: '404'
+      icon: '404',
     },
     children: [
       {
         path: '401',
         component: () => import('@/views/error-page/401'),
         name: 'Page401',
-        meta: { title: '401', noCache: true }
+        meta: { title: '401', noCache: true },
       },
       {
         path: '404',
         component: () => import('@/views/error-page/404'),
         name: 'Page404',
-        meta: { title: '404', noCache: true }
-      }
-    ]
+        meta: { title: '404', noCache: true },
+      },
+    ],
   },
 
   {
@@ -268,9 +268,9 @@ export const asyncRoutes = [
         path: 'log',
         component: () => import('@/views/error-log/index'),
         name: 'ErrorLog',
-        meta: { title: 'Error Log', icon: 'bug' }
-      }
-    ]
+        meta: { title: 'Error Log', icon: 'bug' },
+      },
+    ],
   },
 
   {
@@ -280,34 +280,34 @@ export const asyncRoutes = [
     name: 'Excel',
     meta: {
       title: 'Excel',
-      icon: 'excel'
+      icon: 'excel',
     },
     children: [
       {
         path: 'export-excel',
         component: () => import('@/views/excel/export-excel'),
         name: 'ExportExcel',
-        meta: { title: 'Export Excel' }
+        meta: { title: 'Export Excel' },
       },
       {
         path: 'export-selected-excel',
         component: () => import('@/views/excel/select-excel'),
         name: 'SelectExcel',
-        meta: { title: 'Export Selected' }
+        meta: { title: 'Export Selected' },
       },
       {
         path: 'export-merge-header',
         component: () => import('@/views/excel/merge-header'),
         name: 'MergeHeader',
-        meta: { title: 'Merge Header' }
+        meta: { title: 'Merge Header' },
       },
       {
         path: 'upload-excel',
         component: () => import('@/views/excel/upload-excel'),
         name: 'UploadExcel',
-        meta: { title: 'Upload Excel' }
-      }
-    ]
+        meta: { title: 'Upload Excel' },
+      },
+    ],
   },
 
   {
@@ -322,9 +322,9 @@ export const asyncRoutes = [
         path: 'download',
         component: () => import('@/views/zip/index'),
         name: 'ExportZip',
-        meta: { title: 'Export Zip' }
-      }
-    ]
+        meta: { title: 'Export Zip' },
+      },
+    ],
   },
 
   {
@@ -336,14 +336,14 @@ export const asyncRoutes = [
         path: 'index',
         component: () => import('@/views/pdf/index'),
         name: 'PDF',
-        meta: { title: 'PDF', icon: 'pdf' }
-      }
-    ]
+        meta: { title: 'PDF', icon: 'pdf' },
+      },
+    ],
   },
   {
     path: '/pdf/download',
     component: () => import('@/views/pdf/download'),
-    hidden: true
+    hidden: true,
   },
 
   {
@@ -354,9 +354,9 @@ export const asyncRoutes = [
         path: 'index',
         component: () => import('@/views/theme/index'),
         name: 'Theme',
-        meta: { title: 'Theme', icon: 'theme' }
-      }
-    ]
+        meta: { title: 'Theme', icon: 'theme' },
+      },
+    ],
   },
 
   {
@@ -367,9 +367,9 @@ export const asyncRoutes = [
         path: 'index',
         component: () => import('@/views/clipboard/index'),
         name: 'ClipboardDemo',
-        meta: { title: 'Clipboard', icon: 'clipboard' }
-      }
-    ]
+        meta: { title: 'Clipboard', icon: 'clipboard' },
+      },
+    ],
   },
 
   {
@@ -378,27 +378,28 @@ export const asyncRoutes = [
     children: [
       {
         path: 'https://github.com/PanJiaChen/vue-element-admin',
-        meta: { title: 'External Link', icon: 'link' }
-      }
-    ]
+        meta: { title: 'External Link', icon: 'link' },
+      },
+    ],
   },
 
   // 404 page must be placed at the end !!!
-  { path: '*', redirect: '/404', hidden: true }
-]
+  { path: '*', redirect: '/404', hidden: true },
+];
 
-const createRouter = () => new Router({
-  // mode: 'history', // require service support
-  scrollBehavior: () => ({ y: 0 }),
-  routes: constantRoutes
-})
+const createRouter = () =>
+  new Router({
+    // mode: 'history', // require service support
+    scrollBehavior: () => ({ y: 0 }),
+    routes: constantRoutes,
+  });
 
-const router = createRouter()
+const router = createRouter();
 
 // Detail see: https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465
 export function resetRouter() {
-  const newRouter = createRouter()
-  router.matcher = newRouter.matcher // reset router
+  const newRouter = createRouter();
+  router.matcher = newRouter.matcher; // reset router
 }
 
-export default router
+export default router;

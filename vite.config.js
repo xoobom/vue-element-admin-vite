@@ -52,7 +52,7 @@ export default defineConfig(({ mode, command }) => {
       alias: {
         '@': path.resolve(__dirname, './src'),
       },
-      extensions: ['.mjs', '.js', '.jsx', '.json', '.vue'],
+      extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue'],
     },
     server: {
       port: 9527,
