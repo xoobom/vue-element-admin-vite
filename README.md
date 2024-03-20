@@ -48,38 +48,53 @@ public\index.html迁移到\index.html，添加以下
 
 ### Can't find stylesheet to import
 
-@import "~@/styles改成 @import "@/styles
+解决：@import "~@/styles改成 @import "@/styles
 
 
 
 ### This experimental syntax requires enabling one of the following parser plugin(s): "jsx", "flow", "typescript"
 
-script标签添加lang="jsx"
+解决：script标签添加lang="jsx"
 
 
 
 ### require is not defined
 
-require.context改成
+解决：require.context改成如下手动导入
 
 ```
-const moduleFiles = import.meta.glob('./modules/*.js');
-const modules = Object.fromEntries(
-  await Promise.all(
-    Object.entries(moduleFiles).map(async ([modulePath, moduleLoader]) => {
-      const moduleName = modulePath.replace(/^\.\/(.*)\.js$/, '$1');
-      const { default: moduleExports } = await moduleLoader();
-      return [moduleName, moduleExports];
-    }),
-  ),
-);
+import app from './modules/app.js';
+import errorLog from './modules/errorLog.js';
 ```
 
 
 
 ### The requested module '/src/styles/element-variables.scss' does not provide an export named 'default'
 
-element-variables.scss改成element-variables.module.scss
+解决：element-variables.scss改成element-variables.module.scss
+
+
+
+### mock
+
+解决：采用原项目的mock，本地启动https://github.com/PanJiaChen/vue-element-admin
+
+Vite.config.js里代理如下：
+
+```
+proxy: {
+  '/api': {
+      target: 'http://localhost:9528',
+      rewrite: (p) => p.replace(/^\/api/, '/dev-api'),
+   },
+},
+```
+
+
+
+### 若没有头绪
+
+解决：npm run build看哪里报错
 
 
 

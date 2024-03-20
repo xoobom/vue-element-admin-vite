@@ -6,6 +6,7 @@ import vueJsx from '@vitejs/plugin-vue2-jsx';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
 import vitePluginRequire from 'vite-plugin-require';
+// import mockServer from './mock/mock-server.js';
 
 export default defineConfig(({ mode, command }) => {
   return {
@@ -58,11 +59,13 @@ export default defineConfig(({ mode, command }) => {
       port: 9527,
       host: true,
       open: false,
-      //   proxy: {
-      //     '/api': {
-      //       target: 'http://xxx:30808',
-      //     },
-      //   },
+        proxy: {
+          '/api': {
+            target: 'http://localhost:9528',
+            rewrite: (p) => p.replace(/^\/api/, '/dev-api'),
+          },
+        },
+      // before: mockServer,
     },
   };
 });
