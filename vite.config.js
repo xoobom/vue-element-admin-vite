@@ -59,12 +59,12 @@ export default defineConfig(({ mode, command }) => {
       port: 9527,
       host: true,
       open: false,
-        proxy: {
-          '/api': {
-            target: 'http://localhost:9528',
-            rewrite: (p) => p.replace(/^\/api/, '/dev-api'),
-          },
+      proxy: {
+        '/api': {
+          target: 'http://localhost:9528',
+          rewrite: (p) => p.replace(/^\/api/, '/dev-api'),
         },
+      },
       // before: mockServer,
     },
   };

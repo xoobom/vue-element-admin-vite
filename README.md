@@ -77,7 +77,7 @@ import errorLog from './modules/errorLog.js';
 
 ### mock
 
-解决：采用原项目的mock，本地启动https://github.com/PanJiaChen/vue-element-admin
+解决：由于vite使用原来的mock有问题，且mock是模拟后端接口不影响功能，所以暂时采用原项目的mock，本地启动https://github.com/PanJiaChen/vue-element-admin
 
 Vite.config.js里代理如下：
 
