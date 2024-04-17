@@ -109,11 +109,3 @@ proxy: {
 ### 若没有头绪
 
 解决：npm run build看哪里报错
-
-
-
-
-
-## 参考资料
-
-http://www.taodudu.cc/news/show-4628179.html?action=onClick
