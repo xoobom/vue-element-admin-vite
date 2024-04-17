@@ -6,10 +6,19 @@ vue2+webpack项目庞大时启动慢，热更新慢，影响开发者的开发�
 
 ## 效果对比
 
-|              | vue2+webpack | vue2+vite5 |
-| ------------ | ------------ | ---------- |
-| 启动         | 57s          | 2s         |
-| node内存占用 | 486MB        | 234MB      |
+### MacBook Pro M1
+
+|                | vue2+webpack | vue2+vite5 |
+| -------------- | ------------ | ---------- |
+| 启动           | 7s           | 2s         |
+| 初次首屏       | 1s           | 33s        |
+| 二次首屏       | 小于1s       | 小于1s     |
+| node内存占用   | 515MB        | 169MB      |
+| chrome内存占有 | 126MB        | 126MB      |
+
+初次首屏：清空chrome浏览器缓存，首次打开vscode，chrome打开http://localhost:9527/
+
+二次首屏：不清空chrome浏览器缓存，不关闭vscode，关闭chrome，chrome打开http://localhost:9527/
 
 
 
