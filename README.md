@@ -121,7 +121,7 @@ https://github.com/xoobom/vue-element-admin-vite
 
 ## 捐赠
 
-如果您觉得这个项目帮助到了您，您可以捐赠:moneybag:表示鼓励 :coffee:
+如果您觉得这个项目帮助到了您，您可以捐赠 :moneybag: 表示鼓励 :coffee:
 <div>
   <img width="250" src="./img/alipay.jpg">
   <img width="250" src="./img/wechatpay.jpg">
