@@ -1,6 +1,12 @@
 ## 项目背景
 
-vue2+webpack项目庞大时启动慢，热更新慢，影响开发者的开发体验和幸福感。
+早期公司里vue2后台管理系统基于https://github.com/PanJiaChen/vue-element-admin项目开发，vue2+webpack，项目庞大时启动慢，热更新慢，影响开发者的开发体验和幸福感。
+
+
+
+## 改造目标
+
+vue2项目改成vite最新版
 
 
 
